@@ -1,0 +1,219 @@
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{mediabb}
+\usepackage{amsmath,amssymb,amsthm}
+\let\equation\gather
+\let\endequation\endgather
+\usepackage{fancybox}
+\usepackage{enumerate}
+\usepackage[flushmargin,symbol]{footmisc}
+\usepackage{tocbibind}
+\usepackage[dvipdfmx,%
+ bookmarks=true,%
+ bookmarksnumbered=true,%
+ setpagesize=false,%
+ colorlinks=false,%
+ linkbordercolor={0.8 0.8 0.8},%
+ citebordercolor={0.8 0.8 0.8},%
+ pdfborder={0 0 0.6},%
+% urlcolor=black,linkcolor=black,citecolor=black,%
+ pdftitle={},% 修論のタイトルを入れる
+ pdfauthor={},% 名前を入れる
+ pdfsubject={Master's thesis},%
+ pdfkeywords={\ekeywords}]{hyperref}
+\usepackage{pxjahyper}
+
+% page layout from NAIST style
+%
+\textheight=20.6truecm                % 高さ
+\textwidth=14.5truecm                 % 横幅 (約３６文字)
+\oddsidemargin=0.6truecm              % 左の空きの幅
+\evensidemargin=-3.8truecm            % 右の空きの幅
+
+% 第n章を n. 表記に
+%\renewcommand{\prechaptername}{}     % 数字の前の文字
+%\renewcommand{\postchaptername}{.}   % 数字の後ろの文字
+
+% 数式の途中での改行を許可
+\allowdisplaybreaks[1]
+
+\newtheoremstyle{mydef}%スタイルの名前
+{\topsep}%（このスタイルの）定理型環境の上にはいる空白
+{\topsep}%同じ様に，下にはいる空白
+{\normalfont}%本文のフォント
+%{2pt}%見出し（「定理」とか「補題」とか）の前にはいる空白
+{}%見出し（「定理」とか「補題」とか）の前にはいる空白
+{\bfseries}%見出しの書体．ここではHelveticaでボールド．
+{\bfseries}%見出しの後にはいる句点（"."を入れたければここに"."を書く）
+{0.8em}%見出しの後にはいるスペース
+{}%
+
+\theoremstyle{mydef}%
+\newtheorem{theorem}{定理\!}[section]
+\newtheorem{definition}{定義\!}[section]
+\newtheorem{lemma}{補題\!}[section]
+\newtheorem{corollary}{系\!}[section]
+\newtheorem{example}{例\!}[section]
+
+\newcommand{\figlab}[1]{\label{fig:#1}}
+\newcommand{\figref}[1]{図\!~\ref{fig:#1}} % 図○
+\newcommand{\forlab}[1]{\label{for:#1}}
+\newcommand{\forref}[1]{式\!~(\ref{for:#1})} % 式
+\newcommand{\seclab}[1]{\label{sec:#1}}
+\newcommand{\secref}[1]{\ref{sec:#1}\!~節} % 節
+\newcommand{\chaplab}[1]{\label{chap:#1}}
+\newcommand{\chapref}[1]{\ref{chap:#1}\!~章} % 章
+\newcommand{\exlab}[1]{\label{ex:#1}}
+\newcommand{\exref}[1]{{\bfseries 例\!~\ref{ex:#1}}} % 例
+\newcommand{\lmmlab}[1]{\label{lmm:#1}}
+\newcommand{\lmmref}[1]{{\bfseries 補題\!~\ref{lmm:#1}}} % 補題
+\newcommand{\lmmrefm}[1]{補題\!~\ref{lmm:#1}} % 補題
+\newcommand{\thmlab}[1]{\label{thm:#1}}
+\newcommand{\thmref}[1]{{\bfseries 定理\!~\ref{thm:#1}}} % 定理
+\newcommand{\thmrefm}[1]{定理\!~\ref{thm:#1}} % 定理
+\newcommand{\corlab}[1]{\label{cor:#1}}
+\newcommand{\corref}[1]{{\bfseries 系\!~\ref{cor:#1}}} % 系
+\newcommand{\steplab}[1]{\label{step:#1}}
+\newcommand{\stepref}[1]{{\bfseries 手順\!~\ref{step:#1}}} % 手順
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Class Setting
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\thebibliography#1{\section*{\Large 参考文献\markboth
+ {参 考 文 献}{参 考 文 献}\addcontentsline{toc}{chapter}{参考文献}}\list
+ {[\arabic{enumi}]}{\settowidth\labelwidth{[#1]}\leftmargin\labelwidth
+ \advance\leftmargin\labelsep
+ \usecounter{enumi}}
+ \def\newblock{\hskip .11trueem plus .33trueem minus -.07trueem}
+ \sloppy
+ \sfcode`\.=1000\relax}
+\let\endthebibliography=\endlist
+
+%chapterのフォントサイズ変更
+\makeatletter%%
+\def\@makechapterhead#1{\hbox{}%
+  \vskip-1\Cvs
+  {\parindent\z@
+%  \reset@font\LARGE\bfseries
+   \raggedright\reset@font\Large\bfseries% 左揃え
+   \ifnum \c@secnumdepth >\m@ne
+     \setlength\@tempdima{\linewidth}%
+     \vtop{\hsize\@tempdima%
+         \@chapapp\thechapter\@chappos\mbox{\ \ }%
+     #1}%
+   \else
+     #1\relax
+   \fi}\nobreak\vskip1\Cvs}
+\makeatother%%
+
+%sectionのフォントサイズ変更
+\makeatletter%%
+\renewcommand{\section}{%
+  \@startsection{section}% #1 見出し
+   {1}% #2 見出しのレベル
+   {\z@}% #3 横組みの場合，見出し左の空き(インデント量)
+   {1.5\Cvs \@plus.5\Cdp \@minus.2\Cdp}% #4 見出し上の空き
+   {.5\Cvs \@plus.3\Cdp}% #5 見出し下の空き (負の値なら見出し後の空き)
+  {\raggedright\reset@font\large\bfseries}% 左揃え
+}%
+\makeatother%%
+
+%subsectionのフォントサイズ変更
+\makeatletter%%
+\renewcommand{\subsection}{%
+  \@startsection{subsection}% #1 見出し
+   {1}% #2 見出しのレベル
+   {\z@}% #3 横組みの場合，見出し左の空き(インデント量)
+   {1.5\Cvs \@plus.5\Cdp \@minus.2\Cdp}% #4 見出し上の空き
+   {.5\Cvs \@plus.3\Cdp}% #5 見出し下の空き (負の値なら見出し後の空き)
+  {\raggedright\reset@font\normalsize\bfseries}% 左揃え
+}%
+\makeatother%%
+
+% ページ冒頭に来る表題の上のスペースを消す
+% http://blog.livedoor.jp/green_idea/archives/1464846.html
+\makeatletter
+\def\@startsection#1#2#3#4#5#6{%
+  \if@noskipsec \leavevmode \fi
+  \par
+  \@tempskipa #4\relax
+  \if@english \@afterindentfalse \else \@afterindenttrue \fi
+  \ifdim \@tempskipa <\z@
+    \@tempskipa -\@tempskipa \@afterindentfalse
+  \fi
+  \if@nobreak
+    \everypar{}%
+  \else
+    \addpenalty\@secpenalty
+    \ifdim \@tempskipa >\z@
+      \vskip\@tempskipa
+      \if@slide\else
+        \null
+        \vspace{-\baselineskip}%
+      \fi
+    \fi
+  \fi
+  \noindent
+  \@ifstar
+    {\@ssect{#3}{#4}{#5}{#6}}%
+    {\@dblarg{\@sect{#1}{#2}{#3}{#4}{#5}{#6}}}}
+\makeatother
+
+%式番号に節を加える
+\makeatletter
+  \renewcommand{\theequation}{%
+  \thesection\arabic{equation}}
+    \@addtoreset{equation}{section}
+\makeatother
+
+%図にも節番号を加える
+%\makeatletter
+%  \renewcommand{\thefigure}{%
+%  \thesection.\arabic{figure}}
+%  \@addtoreset{figure}{section}
+%\makeatother
+
+%図に章番号を加える
+\makeatletter
+ \renewcommand{\thefigure}{%
+  \thechapter.\arabic{figure}}
+   \@addtoreset{figure}{chapter}
+ \makeatother
+\makeatletter
+
+% jsbook 用．各章の扉を jsarticle と同じ見た目にする
+%\makeatletter
+%\renewcommand{\chapter}{%
+%  \if@openright\cleardoublepage\else\clearpage\fi
+%  \global\@topnum\z@
+%  \secdef\@chapter\@schapter}
+%\makeatother
+
+% ページ数を下部に表示 (reportならいらない)
+%\makeatletter
+%\def\ps@plainfoot{%
+%  \let\@mkboth\@gobbletwo
+%  \let\@oddhead\@empty
+%  \def\@oddfoot{\normalfont\hfil-- \thepage\ --\hfil}%
+%  \let\@evenhead\@empty
+%  \let\@evenfoot\@oddfoot}
+%\let\ps@plain\ps@plainfoot
+%\makeatother
+%\pagestyle{plain}
+
+% フッタまわりのスペースの設定 (reportならいらない)
+%\setlength\footskip{2\baselineskip}
+%\addtolength{\textheight}{-2\baselineskip}
+
+% 左右のマージンを等しくする (reportならいらない)
+%\setlength{\evensidemargin}{\oddsidemargin}
+
+% 目次に subsection まで表示する
+\setcounter{tocdepth}{4}
