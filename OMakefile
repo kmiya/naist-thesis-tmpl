@@ -1,0 +1,18 @@
+LATEX           = platex
+TETEX2_ENABLED  = false
+LATEXFLAGS      = -interaction=nonstopmode 
+#BIBTEX         = jbibtex
+DVIPDFM         = dvipdfmx
+DVIPDFMFLAGS    = -p a4
+DOCUMENT_TITLE	= mthesis
+
+TEX_FILES = $(glob *tex */*.tex)
+TEXDEPS  = $(TEX_FILES)
+
+LaTeXDocument($(DOCUMENT_TITLE), $(DOCUMENT_TITLE))
+
+.PHONY: clean
+.DEFAULT: $(DOCUMENT_TITLE).pdf $(DOCUMENT_TITLE).dvi
+
+clean:
+	rm -rf *.toc *.log *.dvi *.fls *.aux *.snm *.nav *.out *.bbl *.blg *.vrb *.lot *.lof *.omc ./tex/*.aux
