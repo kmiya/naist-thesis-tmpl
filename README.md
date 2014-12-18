@@ -11,6 +11,15 @@ NAIST情報科学研究科の日本語修士論文用LaTeXテンプレートで�
 - `hyperref.sty`に対応しているので，生成したPDFの目次や文献番号にハイパーリンクが自動的に付与されます．
 - なるべく現代的なLaTeXファイルの書き方に従うようにしました．
 
+## 使い方
+`git`を使っているなら
+
+    $ git clone git@github.com:kmiya/naist-thesis-tmpl.git
+
+もしくは[このリンクからzipファイルをダウンロード](https://github.com/kmiya/naist-thesis-tmpl/archive/master.zip)し，展開してご利用ください．
+
+ファイルのフォーマットはすべてUTF-8なので，主にWindowsを使っている方はご注意ください．
+
 ## よくありそうな質問
 
 #### 大学が提供しているスタイルファイルを使わないと修士論文が受理されないのでは？
@@ -26,15 +35,6 @@ NAIST情報科学研究科の日本語修士論文用LaTeXテンプレートで�
     2. 本文は体裁を自由に決めて作成する．
 
 このテンプレートは上記`mthesis.dvi`の「最初の4ページ」と一致するように調整してあります．
-
-## 使い方
-`git`を使っているなら
-
-    $ git clone git@github.com:kmiya/naist-thesis-tmpl.git
-
-もしくは[このリンク](https://github.com/kmiya/naist-thesis-tmpl/archive/master.zip)からzipファイルをダウンロードし，展開してご利用ください．
-
-ファイルのフォーマットはすべてUTF-8なので，主にWindowsを使っている方はご注意ください．
 
 ### ディレクトリの構造
 
