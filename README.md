@@ -36,6 +36,21 @@ NAIST情報科学研究科の日本語修士論文用LaTeXテンプレートで�
 
 このテンプレートは上記`mthesis.dvi`の「最初の4ページ」と一致するように調整してあります．
 
+#### 目次に「目次」を入れたい
+`setting.tex`の以下の行を
+
+```tex
+\usepackage[nottoc]{tocbibind}
+```
+
+以下のように変更してください（`[nottoc]`を消す）．
+
+```tex
+\usepackage{tocbibind}
+```
+
+これで目次に「目次」が追加されます．ただし，TeXのバージョンによっては目次のレイアウトが崩れる可能性がありますので，ご注意ください（Thanks @matcha-shake）．
+
 ### ディレクトリの構造
 
 ```
