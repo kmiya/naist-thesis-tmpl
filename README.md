@@ -49,7 +49,7 @@ NAIST情報科学研究科の日本語修士論文用LaTeXテンプレートで�
 \usepackage{tocbibind}
 ```
 
-これで目次に「目次」が追加されます．ただし，TeXのバージョンによっては目次のレイアウトが崩れる可能性がありますので，ご注意ください（Thanks @matcha-shake）．
+これで目次に「目次」が追加されます．ただし，TeXのバージョンによっては目次のレイアウトが崩れる可能性がありますので，ご注意ください（Thanks [matcha-shake](https://github.com/matcha-shake)）．
 
 ### ディレクトリの構造
 
