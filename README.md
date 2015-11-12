@@ -3,6 +3,8 @@ naist-thesis-tmpl
 
 NAIST情報科学研究科の日本語修士論文用LaTeXテンプレートです．
 
+(English version is [here](https://github.com/kmiya/naist-thesis-tmpl-en))
+
 学生向けに大学が公開しているスタイルファイル(`naist-mthesis.sty`)は最終更新日が1998年とたいへん古いため，使用するとさまざまな不具合が生じます．そこで，`jsbook`をベースに，余白や文字の位置などは大学が提供しているスタイルファイルと一致するようにしたLaTeXテンプレートを作成しました．
 
 ## 特徴
