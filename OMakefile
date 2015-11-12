@@ -15,4 +15,4 @@ LaTeXDocument($(DOCUMENT_TITLE), $(DOCUMENT_TITLE))
 .DEFAULT: $(DOCUMENT_TITLE).pdf $(DOCUMENT_TITLE).dvi
 
 clean:
-	rm -rf *.toc *.log *.dvi *.fls *.aux *.snm *.nav *.out *.bbl *.blg *.vrb *.lot *.lof *.omc ./tex/*.aux
+	rm -rf *.toc *.log *.dvi *.fls *.aux *.snm *.nav *.out *.bbl *.blg *.vrb *.lot *.lof *.omc ./tex/*.aux ./tex/class_setting/*.aux
