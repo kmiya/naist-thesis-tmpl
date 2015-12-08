@@ -84,7 +84,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\def\thebibliography#1{\section*{\Large 参考文献\markboth
+\def\thebibliography#1{\chapter*{参考文献\markboth
  {参 考 文 献}{参 考 文 献}\addcontentsline{toc}{chapter}{参考文献}}\list
  {[\arabic{enumi}]}{\settowidth\labelwidth{[#1]}\leftmargin\labelwidth
  \advance\leftmargin\labelsep
@@ -109,6 +109,17 @@
    \else
      #1\relax
    \fi}\nobreak\vskip1\Cvs}
+\makeatother%%
+
+%schapterのフォントサイズ変更
+\makeatletter%%
+\def\@makeschapterhead#1{\hbox{}%
+  \vskip-1\Cvs
+  {\parindent \z@ \raggedright
+    \normalfont
+    \interlinepenalty\@M
+    \Large\headfont #1\par\nobreak
+    \vskip1\Cvs}}
 \makeatother%%
 
 %sectionのフォントサイズ変更
