@@ -116,7 +116,7 @@ pdfauthor={  },%
 ## 参考リンク
 以下の資料は大変参考になるので，論文を指導教官や副査の方に提出する前には必ず目を通すことをお勧めします．
 
-- [SICE著者のためのLaTEXべからず集 (PDF)](http://www-ics.acs.i.kyoto-u.ac.jp/ics/HowToWriteTeXDocuments.pdf)
+- [SICE著者のためのLaTEXべからず集 (PDF)](https://www.jstage.jst.go.jp/article/sicejl1962/34/11/34_11_889/_article/-char/ja/)
 - [数学の常識・非常識---由緒正しいTEX入力法 (PDF)](http://www.math.tohoku.ac.jp/tmj/oda_tex.pdf)
 - [使ってはいけないLaTeXのコマンド・パッケージ・作法](http://ichiro-maruta.blogspot.jp/2013/03/latex.html)
 - [Tips/TeX - Takatalab](http://www.info.kochi-tech.ac.jp/y-takata/index.php?Tips/TeX)
